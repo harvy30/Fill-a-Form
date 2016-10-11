@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>QUESTION 6</title>
+</head>
+
+<body>
+    <h1>Please fill in the form below:</h1>
+    <form>
+        <input type="text" name="firstName" id="firstName">FirstName
+        <br>
+        <br>
+        <input type="text" name="lastName" id="lastName">LastName
+        <br>
+        <br>
+        <input type="radio" name="gender" id="male">Male
+        <br>
+        <br>
+        <input type="radio" name="gender" value="female" id="female">Female
+        <br>
+        <br>
+        <select id="state1">
+            <option>NONE</option>
+            <option>New York</option>
+            <option>Texas</option>
+            <option>California</option>
+            <option>Florida</option>
+        </select>
+        <br>
+        <br>
+        <input type="checkbox" name="checkbox" id="box">I Agree to the Terms & Conditions.
+        <br>
+        <br>
+        <button id="button">Submit Form</button>
+    </form>
+    <script>
+    var _id = function _id(id) {
+        return document['getElementById'](id);
+    }
+
+    var form = _id('form');
+    var firstName = _id("firstName");
+    var lastName = _id("lastName");
+    var male = _id("male");
+    var female = _id("female");
+    var state = _id("state1");
+    var box = _id("box");
+    var frm = document['querySelectorAll']('input');
+    var button = _id('button');
+
+
+
+    button['addEventListener']('click', function() {
+
+
+        if (firstName['value'] === true && lastName['value'] === true) {
+            console.log(firstName.value);
+        }
+        if (male.checked === true || female.checked === true) {
+            console.log("gender : yes")
+        }
+        if (state.value == "NONE") {
+            console.log(state['selectedIndex']['innerHTML'])
+        }
+        if (box.checked) {
+            console.log("box: checked")
+        } else {
+            alert("Please fill in all the fields");
+        }
+    });
+    </script>
+</body>
+
+</html>
